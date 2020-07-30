@@ -10,10 +10,12 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "now-start": "vue-cli-service serve",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "deploy": "gh-pages -d C:/Users/Michael/Desktop/my_portfolio"
   },
   "dependencies": {
     "core-js": "^3.6.2",
+    "gh-pages": "^3.1.0",
     "vue": "^2.6.11",
     "vue-i18n": "^8.15.3",
     "vue-router": "^3.1.3",
