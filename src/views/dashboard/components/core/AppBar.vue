@@ -1,3 +1,4 @@
+<!-- eslint-disable -->
 <template>
   <v-app-bar
     id="app-bar"
@@ -29,7 +30,7 @@
     />
 
     <v-spacer />
-
+<!--
     <v-text-field
       :label="$t('search')"
       color="secondary"
@@ -113,11 +114,12 @@
       to="/pages/user"
     >
       <v-icon>mdi-account</v-icon>
-    </v-btn>
+    </v-btn> -->
   </v-app-bar>
 </template>
 
 <script>
+/* eslint-disable */
   // Components
   import { VHover, VListItem } from 'vuetify/lib'
 

@@ -70,25 +70,12 @@
           :item="item"
         />
       </template>
-
-      <!-- Style cascading bug  -->
-      <!-- https://github.com/vuetifyjs/vuetify/pull/8574 -->
-      <div />
     </v-list>
-
-    <template v-slot:append>
-      <base-item
-        :item="{
-          title: $t('upgrade'),
-          icon: 'mdi-package-up',
-          to: '/upgrade',
-        }"
-      />
-    </template>
   </v-navigation-drawer>
 </template>
 
 <script>
+/* eslint-disable */
   // Utilities
   import {
     mapState,
@@ -106,40 +93,36 @@
 
     data: () => ({
       items: [
+         /*
         {
           icon: 'mdi-view-dashboard',
-          title: 'dashboard',
+          title: 'Home',
           to: '/',
-        },
+        }, */
         {
           icon: 'mdi-account',
-          title: 'user',
+          title: 'Who am I?',
           to: '/pages/user',
         },
         {
-          title: 'rtables',
-          icon: 'mdi-clipboard-outline',
+          title: 'COVID-19 Statistics Project',
+          icon: 'mdi-chart-line',
           to: '/tables/regular-tables',
         },
         {
-          title: 'typography',
-          icon: 'mdi-format-font',
+          title: 'Translink Bus Locator Project',
+          icon: 'mdi-bus-clock',
           to: '/components/typography',
         },
         {
-          title: 'icons',
-          icon: 'mdi-chart-bubble',
-          to: '/components/icons',
+          title: 'Past Projects',
+          icon: 'mdi-hammer-wrench',
+          to: '/components/past-projects',
         },
         {
-          title: 'google',
-          icon: 'mdi-map-marker',
-          to: '/maps/google-maps',
-        },
-        {
-          title: 'notifications',
-          icon: 'mdi-bell',
-          to: '/components/notifications',
+          title: 'Contact',
+          icon: 'mdi-phone',
+          to: '/component/contact',
         },
       ],
     }),

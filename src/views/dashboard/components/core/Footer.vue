@@ -1,7 +1,7 @@
 <template>
   <v-footer
     id="dashboard-core-footer"
-  >
+  > <!--
     <v-container>
       <v-row
         align="center"
@@ -38,6 +38,7 @@
         </v-col>
       </v-row>
     </v-container>
+    -->
   </v-footer>
 </template>
 

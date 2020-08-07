@@ -204,7 +204,7 @@
         '#E91E63',
         '#FF5252',
       ],
-      image: 'https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-1.jpg',
+      image: 'https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-4.jpg',
       images: [
         'https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-1.jpg',
         'https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-2.jpg',

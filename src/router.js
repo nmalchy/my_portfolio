@@ -13,30 +13,30 @@ export default new Router({
       children: [
         // Dashboard
         {
-          name: 'Dashboard',
+          name: 'Home',
           path: '',
           component: () => import('@/views/dashboard/Dashboard'),
         },
         // Pages
         {
-          name: 'User Profile',
+          name: 'Who Am I?',
           path: 'pages/user',
           component: () => import('@/views/dashboard/pages/UserProfile'),
         },
         {
-          name: 'Notifications',
+          name: 'COVID-19 Statistics',
           path: 'components/notifications',
           component: () => import('@/views/dashboard/component/Notifications'),
         },
         {
-          name: 'Icons',
-          path: 'components/icons',
-          component: () => import('@/views/dashboard/component/Icons'),
+          name: 'Past Projects',
+          path: 'components/past-projects',
+          component: () => import('@/views/dashboard/component/PastProjects'),
         },
         {
-          name: 'Typography',
-          path: 'components/typography',
-          component: () => import('@/views/dashboard/component/Typography'),
+          name: 'Contact',
+          path: 'component/contact',
+          component: () => import('@/views/dashboard/component/Contact'),
         },
         // Tables
         {
