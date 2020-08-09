@@ -33,12 +33,16 @@ export default new Router({
           path: 'contact',
           component: () => import('@/views/dashboard/component/Contact'),
         },
-        // Tables
         {
           name: 'COVID-19 Statistics',
           path: 'covid-project',
           component: () => import('@/views/dashboard/tables/RegularTables'),
         },
+        {
+         name: 'Translink Bus Locator Project',
+         path: 'translink-project',
+         component: () => import('@/views/dashboard/component/Notifications'),
+       },
       ],
     },
   ],

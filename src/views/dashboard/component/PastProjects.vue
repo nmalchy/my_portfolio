@@ -110,7 +110,7 @@
                <v-list-item two-line>
                   <v-list-item-content>
                   <v-list-item-title><a href="https://www.thehealthcreationlab.com/" target="_blank">www.thehealthcreationlab.com</a></v-list-item-title>
-                  <p>A website I built for an old work buddy who was starting his own naturpathic clinic and needed a website.</p>
+                  <p>A website I built for an old work buddy who was starting his own naturopathic clinic and needed a website.</p>
                   </v-list-item-content>
                </v-list-item>
                <v-list-item two-line>
