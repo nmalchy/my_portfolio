@@ -1,3 +1,4 @@
+<!-- eslint-disable -->
 <template>
   <v-navigation-drawer
     id="core-navigation-drawer"
@@ -25,22 +26,10 @@
       nav
     >
       <v-list-item>
-        <v-list-item-avatar
-          class="align-self-center"
-          color="white"
-          contain
-        >
-          <v-img
-            src="https://demos.creative-tim.com/vuetify-material-dashboard/favicon.ico"
-            max-height="30"
-          />
-        </v-list-item-avatar>
-
         <v-list-item-content>
-          <v-list-item-title
-            class="display-1"
-            v-text="profile.title"
-          />
+         <v-list-item-title class="display-2">
+            Noah's Portfolio
+         </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -93,16 +82,10 @@
 
     data: () => ({
       items: [
-         /*
-        {
-          icon: 'mdi-view-dashboard',
-          title: 'Home',
-          to: '/',
-        }, */
         {
           icon: 'mdi-account',
           title: 'Who am I?',
-          to: 'profile',
+          to: '/',
         },
         {
           title: 'COVID-19 Statistics Project',

@@ -11,16 +11,10 @@ export default new Router({
       path: '/',
       component: () => import('@/views/dashboard/Index'),
       children: [
-        // Dashboard
-        {
-          name: 'Home',
-          path: '',
-          component: () => import('@/views/dashboard/Dashboard'),
-        },
         // Pages
         {
           name: 'Who Am I?',
-          path: 'profile',
+          path: '',
           component: () => import('@/views/dashboard/pages/UserProfile'),
         },
         {
@@ -34,7 +28,7 @@ export default new Router({
           component: () => import('@/views/dashboard/component/Contact'),
         },
         {
-          name: 'COVID-19 Statistics',
+          name: 'COVID-19 Statistics Project',
           path: 'covid-project',
           component: () => import('@/views/dashboard/tables/RegularTables'),
         },

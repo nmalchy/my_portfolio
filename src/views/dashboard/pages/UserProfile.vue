@@ -122,12 +122,13 @@
               Full-Stack Software Developer
             </h6>
 
-            <h4 class="display-2 font-weight-light mb-3 black--text">
+            <h4 class="display-2 font-weight-light mb-3">
               Noah Malchy
             </h4>
-            <p class="display-1 font-weight-light mb-1 black--text">
+            <p class="display-1 font-weight-light mb-1">
                Welcome to my portfolio! My name is Noah, and I'm a software developer based in beautiful
-               British Columbia.
+               British Columbia. In my spare time I enjoy rockin' out on the drums, playing competitive sports/videogames,
+               and I always have an audiobook on the go!
             </p>
             <br>
             <v-btn

@@ -82,7 +82,7 @@
          ></v-skeleton-loader>
       </v-col>
      </v-row>
-     <h4>Data provided by https://documenter.getpostman.com/view/4074074/SzS7Pkup?version=latest</h4>
+     <h4 class='text-center'>Data provided by: <a href='https://documenter.getpostman.com/view/4074074/SzS7Pkup?version=latest' target="_blank">https://documenter.getpostman.com/view/4074074/SzS7Pkup?version=latest</a></h4>
   </v-container>
 </template>
 
