@@ -135,7 +135,7 @@
               color="success"
               rounded
               class="mr-0"
-              to="/component/contact"
+              to="/contact"
             >
               Contact
             </v-btn>
