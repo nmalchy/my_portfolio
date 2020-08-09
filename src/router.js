@@ -20,41 +20,24 @@ export default new Router({
         // Pages
         {
           name: 'Who Am I?',
-          path: 'pages/user',
+          path: 'profile',
           component: () => import('@/views/dashboard/pages/UserProfile'),
         },
         {
-          name: 'COVID-19 Statistics',
-          path: 'components/notifications',
-          component: () => import('@/views/dashboard/component/Notifications'),
-        },
-        {
           name: 'Past Projects',
-          path: 'components/past-projects',
+          path: 'past-projects',
           component: () => import('@/views/dashboard/component/PastProjects'),
         },
         {
           name: 'Contact',
-          path: 'component/contact',
+          path: 'contact',
           component: () => import('@/views/dashboard/component/Contact'),
         },
         // Tables
         {
-          name: 'Regular Tables',
-          path: 'tables/regular-tables',
+          name: 'COVID-19 Statistics',
+          path: 'covid-project',
           component: () => import('@/views/dashboard/tables/RegularTables'),
-        },
-        // Maps
-        {
-          name: 'Google Maps',
-          path: 'maps/google-maps',
-          component: () => import('@/views/dashboard/maps/GoogleMaps'),
-        },
-        // Upgrade
-        {
-          name: 'Upgrade',
-          path: 'upgrade',
-          component: () => import('@/views/dashboard/Upgrade'),
         },
       ],
     },

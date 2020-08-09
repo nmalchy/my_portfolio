@@ -126,8 +126,8 @@
               Noah Malchy
             </h4>
             <p class="display-1 font-weight-light mb-1 black--text">
-               Welcome to my portfolio prospective employer! My name is Noah, and I'm a software developer based in beautiful
-               British Columbia. 
+               Welcome to my portfolio! My name is Noah, and I'm a software developer based in beautiful
+               British Columbia.
             </p>
             <br>
             <v-btn

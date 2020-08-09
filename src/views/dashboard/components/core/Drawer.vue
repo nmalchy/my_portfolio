@@ -102,27 +102,27 @@
         {
           icon: 'mdi-account',
           title: 'Who am I?',
-          to: '/pages/user',
+          to: 'profile',
         },
         {
           title: 'COVID-19 Statistics Project',
           icon: 'mdi-chart-line',
-          to: '/tables/regular-tables',
+          to: 'covid-project',
         },
         {
           title: 'Translink Bus Locator Project',
           icon: 'mdi-bus-clock',
-          to: '/components/typography',
+          to: 'translink-project',
         },
         {
           title: 'Past Projects',
           icon: 'mdi-hammer-wrench',
-          to: '/components/past-projects',
+          to: 'past-projects',
         },
         {
           title: 'Contact',
           icon: 'mdi-phone',
-          to: '/component/contact',
+          to: 'contact',
         },
       ],
     }),
