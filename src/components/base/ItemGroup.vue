@@ -13,15 +13,6 @@
         v-text="computedText"
       />
 
-      <v-list-item-avatar
-        v-else-if="item.avatar"
-        class="align-self-center"
-        color="white"
-        contain
-      >
-        <v-img src="https://demos.creative-tim.com/vuetify-material-dashboard/favicon.ico" />
-      </v-list-item-avatar>
-
       <v-list-item-content>
         <v-list-item-title v-text="item.title" />
       </v-list-item-content>
