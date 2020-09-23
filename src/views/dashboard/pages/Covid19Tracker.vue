@@ -10,7 +10,7 @@
             </div>
           </template>
             <v-card-title>
-            <v-card-text align="right" v-if="countryData['data']['last_update']">Stats Updated: {{ countryData['data']['last_update'] }}</v-card-text>
+            <v-card-text align="right" v-if="countryData[0][0]['Date']">Figures Last Updated: {{ countryData[0][0]['Date'].substring(0,10) }}</v-card-text>
             <v-spacer></v-spacer>
             <v-text-field
             v-model="search"
@@ -101,78 +101,78 @@ export default {
       countryData: [],
       usableCountryData: [],
       countryOneChartData: 'Canada',
-      countryTwoChartData: 'USA',
+      countryTwoChartData: 'United States of America',
       comparisonMetric: [
-         'Active Cases', 
-         'New Cases', 
+         'New Confirmed Cases', 
+         'Total Confirmed Cases', 
          'New Deaths', 
-         'Serious/Critical Cases',
-         'Cases/1MilPop',
+         'New Recovered',
          'Total Deaths',
          'Total Recovered'
       ],
       comparisonMetricVal: "Total Deaths",
       headers: [
-         { text: 'Country', align: 'start', filterable: true, value: 'country' },
-         { text: 'Active Cases', value: 'active_cases' },
-         { text: 'New Cases', value: 'new_cases' },
-         { text: 'New Deaths', value: 'new_deaths' },
-         { text: 'Serious/Critical Cases', value: 'serious_critical' },
-         { text: 'Total Cases', value: 'total_cases' },
-         { text: 'Cases/1Mil Pop.', value: 'cases_per_mill_pop' },
-         { text: 'Total Deaths', value: 'total_deaths' },
-         { text: 'Total Recovered', value: 'total_recovered' },
+         { text: 'Country', align: 'start', filterable: true, value: 'Country' },
+         { text: 'New Confirmed Cases', value: 'NewConfirmed' },
+         { text: 'Total Confirmed Cases', value: 'TotalConfirmed' },
+         { text: 'New Deaths', value: 'NewDeaths' },
+         { text: 'Total Deaths', value: 'TotalDeaths' },
+         { text: 'New Recovered', value: 'NewRecovered' },
+         { text: 'Total Recovered', value: 'TotalRecovered' },
       ],
       chartOptions: null,
       countryChartData: null,
    }),
    created () {
-      this.getCountries()
+      setTimeout(this.getCountries(), 5000);
    },
    methods: {
       getCountries() {
-         axios.get("https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?limit=220")
-         .then(response => this.countryData = response.data)
-         .then(() => this.countryData['data']['rows'].map((data) => this.countries.push(data['country'])))
+         axios.get("https://api.covid19api.com/summary")
+         //.then(response => console.log(response))
+         .then(response => this.countryData.push(response.data.Countries))
+         .then(console.log(this.countryData))
+         .then(() => this.countryData[0].map((data) => this.countries.push(data['Country'])))
          .then(() => {
-            let comparisonMetricUnfiltered = Object.keys(this.countryData['data']['rows'][0])
+            let comparisonMetricUnfiltered = Object.keys(this.countryData[0][0])
+            console.log(comparisonMetricUnfiltered)
             //this.comparisonMetricVal = comparisonMetricUnfiltered.filter((data) => data !== 'flag' || 'country' || 'country_abbreviation')
          })
-         .then(() => this.countryData['data']['rows'].map((data) => this.usableCountryData.push(data)))
+         .then(() => this.countryData[0].map((data) => this.usableCountryData.push(data)))
          .then(() => this.populateChart())
          .catch(error => console.log('error', error))
       },
 
       populateChart() {
-         let country1 = this.countryData['data']['rows'].filter((data) => data['country'] == this.countryOneChartData)
-         let country2 = this.countryData['data']['rows'].filter((data) => data['country'] == this.countryTwoChartData)
-         let comparisonMetricValReal = 'total_deaths';
+         let country1 = this.countryData[0].filter((data) => data['Country'] == this.countryOneChartData)
+         let country2 = this.countryData[0].filter((data) => data['Country'] == this.countryTwoChartData)
+
+         console.log(country1)
+         let comparisonMetricValReal = 'TotalDeaths';
 
             switch (this.comparisonMetricVal) {
-               case 'Active Cases':
-                  comparisonMetricValReal = "active_cases";
+               case 'Total Confirmed Cases':
+                  comparisonMetricValReal = "ConfirmedCases";
                   break;
-               case 'New Cases':
-                  comparisonMetricValReal = "new_cases";
+               case 'New Confirmed Cases':
+                  comparisonMetricValReal = "NewConfirmed";
                   break;
                case 'New Deaths':
-                  comparisonMetricValReal = "new_deaths";
+                  comparisonMetricValReal = "NewDeaths";
                   break;
-               case 'Serious/Critical Cases':
-                  comparisonMetricValReal = "serious_critical";
-                  break;
-               case 'Cases/1MilPop':
-                  comparisonMetricValReal = "cases_per_mill_pop";
-                  break;
-               case 'Total Cases':
-                  comparisonMetricValReal = "total_cases";
+               case 'New Recovered':
+                  comparisonMetricValReal = "NewRecovered";
                   break;
                case 'Total Deaths':
-                  comparisonMetricValReal = "total_deaths";
+                  comparisonMetricValReal = "TotalDeaths";
                   break;
                case 'Total Recovered':
-                  comparisonMetricValReal = "total_recovered";
+                  comparisonMetricValReal = "TotalRecovered";
+               default:
+                 comparisonMetricValReal = 'TotalDeaths';
+                 break;
                }
+
             var colorArray = [];
 
             for (var i = 0; i < 2; i++)
@@ -187,8 +187,8 @@ export default {
                labels: [this.countryOneChartData, this.countryTwoChartData],
                datasets: [{
                   data: [
-                     parseFloat(country1[0][comparisonMetricValReal].replace(/,/g, '')),
-                     parseFloat(country2[0][comparisonMetricValReal].replace(/,/g, ''))
+                     parseFloat(country1[0][comparisonMetricValReal]),
+                     parseFloat(country2[0][comparisonMetricValReal])
                   ],
                   backgroundColor: colorArray,
                   pointBorderColor: 'black',

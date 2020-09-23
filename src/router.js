@@ -11,7 +11,6 @@ export default new Router({
       path: '/',
       component: () => import('@/views/dashboard/Index'),
       children: [
-        // Pages
         {
           name: 'Who Am I?',
           path: '',
@@ -20,22 +19,22 @@ export default new Router({
         {
           name: 'Past Projects',
           path: 'past-projects',
-          component: () => import('@/views/dashboard/component/PastProjects'),
+          component: () => import('@/views/dashboard/pages/PastProjects'),
         },
         {
           name: 'Contact',
           path: 'contact',
-          component: () => import('@/views/dashboard/component/Contact'),
+          component: () => import('@/views/dashboard/pages/Contact'),
         },
         {
           name: 'COVID-19 Statistics Project',
           path: 'covid-project',
-          component: () => import('@/views/dashboard/tables/RegularTables'),
+          component: () => import('@/views/dashboard/pages/Covid19Tracker'),
         },
         {
          name: 'Translink Bus Locator Project',
          path: 'translink-project',
-         component: () => import('@/views/dashboard/component/Notifications'),
+         component: () => import('@/views/dashboard/pages/TranslinkBusLocator'),
        },
       ],
     },
