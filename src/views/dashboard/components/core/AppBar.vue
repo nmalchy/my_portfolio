@@ -1,4 +1,3 @@
-<!-- eslint-disable -->
 <template>
   <v-app-bar
     id="app-bar"
@@ -30,7 +29,7 @@
     />
 
     <v-spacer />
-<!--
+    <!--
     <v-text-field
       :label="$t('search')"
       color="secondary"

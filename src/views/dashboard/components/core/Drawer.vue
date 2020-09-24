@@ -1,4 +1,3 @@
-<!-- eslint-disable -->
 <template>
   <v-navigation-drawer
     id="core-navigation-drawer"
@@ -27,9 +26,9 @@
     >
       <v-list-item>
         <v-list-item-content>
-         <v-list-item-title class="display-2">
+          <v-list-item-title class="display-2">
             Noah's Portfolio
-         </v-list-item-title>
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -64,7 +63,6 @@
 </template>
 
 <script>
-/* eslint-disable */
   // Utilities
   import {
     mapState,
